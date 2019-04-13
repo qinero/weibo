@@ -14,7 +14,7 @@ public class DButil {
 
     public static Connection getConn() throws Exception {
         Connection conn;
-        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/weibo", "root", "201610204032");
+        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/weibo?serverTimezone=GMT%2B8", "root", "201610204032");
         return conn;
     }
 }
