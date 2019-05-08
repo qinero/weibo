@@ -14,6 +14,8 @@ public class UserDao {
             Connection conn = DButil.getConn();
             PreparedStatement search = conn.prepareStatement("SELECT * FROM user WHERE userId=?");
             search.setString(1, user);
+   //         search.setString(2, user);
+
             ResultSet result = search.executeQuery(); // 执行
             User users = null;
 
