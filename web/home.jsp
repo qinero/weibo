@@ -29,32 +29,13 @@
     <!--  Social tags      -->
     <meta name="keywords" content="">
     <meta name="description" content="">
-    
-    
-    
 </head>
+
 
 <body class="profile-page sidebar-collapse">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent " color-on-scroll="400">
         <div class="container">
-            <div class="dropdown button-dropdown">
-                <a href="#pablo" class="dropdown-toggle" id="navbarDropdown" data-toggle="dropdown">
-                    <span class="button-bar"></span>
-                    <span class="button-bar"></span>
-                    <span class="button-bar"></span>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-header">Dropdown header</a>
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Separated link</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">One more separated link</a>
-                </div>
-            </div>
             <div class="navbar-translate">
                 <a class="navbar-brand" href="#" rel="tooltip" title="" data-placement="bottom">
                     回到顶部
@@ -113,7 +94,7 @@
         <div class="section">
             <div class="container">
                 <div class="button-container">
-                    <a href="#button" class="btn btn-primary btn-round btn-lg">写微博</a>
+                    <a href="write.jsp" class="btn btn-primary btn-round btn-lg">写微博</a>
                 </div>
                 <div class="row">
                     <div class="col-md-6 ml-auto mr-auto">
