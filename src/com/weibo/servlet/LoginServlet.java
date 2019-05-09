@@ -31,7 +31,9 @@ public class LoginServlet extends HttpServlet {
 
         } else {
             if (pwd.equals(user.getUserPassword()))
-                System.out.println("正确");
+                request.getRequestDispatcher("home.jsp").forward(request, response);
+
+            //   System.out.println("正确");
         }
 
     }
