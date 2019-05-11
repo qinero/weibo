@@ -49,7 +49,7 @@
             <div class="collapse navbar-collapse justify-content-end" data-nav-image="assets/img/blurred-image-1.jpg">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">修改头像</a>
+                        <a class="nav-link" href="head.jsp">修改头像</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#/issues">修改昵称</a>
