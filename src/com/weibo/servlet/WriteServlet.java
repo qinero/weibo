@@ -1,5 +1,7 @@
 package com.weibo.servlet;
 
+import com.weibo.dao.UserDao;
+import com.weibo.pojo.User;
 import com.weibo.util.Fileutil;
 import com.weibo.util.Ziputil;
 
@@ -8,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet(name = "WriteServlet", urlPatterns = {"/WriteServlet"})
@@ -20,18 +23,27 @@ public class WriteServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
 
-        String  content= request.getParameter("content");
+        String content= request.getParameter("content");
+        HttpSession session = request.getSession();
+        Object user=  session.getAttribute("user");
 
-        Ziputil zip=new Ziputil();
-        Fileutil save=new Fileutil();
-        byte[] compressed;
-        String decompressed;
+        if(content.length()<21){
+            Fileutil save=new Fileutil();
+            save.saveString(content,user);
+        }
+        else{
+            Ziputil zip=new Ziputil();
+            Fileutil save=new Fileutil();
+            byte[] compressed;
 
-        compressed=zip.compress(content); // 将文字压缩
-        save.saveFile(compressed);
-
-        decompressed=zip.decompress(compressed); // 得到解压后的文字
-
+            String decompressed;
+            // 将文字压缩
+            compressed=zip.compress(content);
+            save.saveFile(compressed,user);
+            // 得到解压后的文字
+            //decompressed=zip.decompress(compressed);
+        }
+        request.getRequestDispatcher("home.jsp").forward(request, response);
     }
 }
 
