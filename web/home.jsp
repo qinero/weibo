@@ -83,7 +83,7 @@
                             <a class="nav-link" href="#">关注</a>
                         </div>
                         <div class="social-description">
-                            <h2>48</h2>
+                            <h2>20</h2>
                             <a class="nav-link" href="#">粉丝</a>
                         </div>
                     </div>
