@@ -9,13 +9,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class UserDao {
+    public String nowUser;
     public User selectName(String user) {
         try {
             Connection conn = DButil.getConn();
             PreparedStatement search = conn.prepareStatement("SELECT * FROM user WHERE userId=?");
             search.setString(1, user);
    //         search.setString(2, user);
-
+            nowUser = user;
             ResultSet result = search.executeQuery(); // 执行
             User users = null;
 
