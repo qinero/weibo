@@ -65,7 +65,7 @@
                             <div class="b_clear submit">
                                 
                                 <button type="submit">登&nbsp;&nbsp;录</button>
-                                <a href="#" class="r_float">忘记密码？</a>
+                                <a href="sign_in.jsp" class="r_float">没有账号？点我</a>
                                 <p class="tips hidden">登录失败，请检查您的账户与密码</p>
                             </div>
                             <br>
@@ -79,7 +79,6 @@
             </div>
             <div class="footer">
                         <p><a href="#">沁儿的梦</a></p>
-                        
                     </div>
         </div>
 
