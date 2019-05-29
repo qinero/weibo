@@ -28,15 +28,17 @@
         <font size="6" color="#ffa500">编辑微博</font>
     </div>
 <br>
+    <form action="WriteServlet" method="POST">
     <div class="div5">
             <textarea id="content" name="content"   style="width: 100%;height: 100%;"
                       onblur="this.value=this.value.trim()">
             </textarea>
     </div>
 <br>
-    <div class="b_clear submit">
-        <button type="submit">提&nbsp;&nbsp;交</button>
-    </div>
+        <div class="b_clear submit">
+            <button type="submit">提&nbsp;&nbsp;交</button>
+        </div>
+    </form>
 </body>
 </html>
 
