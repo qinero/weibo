@@ -8,16 +8,22 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class UserAddDao {
-    static int count=2;
-    public boolean addName() {
+    public boolean addName(String userName,String pwd) {
         try {
             Connection conn = DButil.getConn();
-            PreparedStatement search = conn.prepareStatement("INSERT INTO User (userId,userName,userPassword) VALUES (count,?,?)");
-            System.out.println("正确1");
-            count++;
+            System.out.println("正确0");
+            PreparedStatement search = conn.prepareStatement("insert into user (userName,userPassword) values(?,?)");
+            search.setString(1, userName);
+            search.setString(2, pwd);
+            // 执行SQL语句
+            int result = search.executeUpdate();
             search.close();
             conn.close();
-            return true;
+            if (result != -1) {
+                return true;
+            } else {
+                return false;
+            }
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
