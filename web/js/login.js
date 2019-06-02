@@ -1,11 +1,4 @@
-/*
- * @作者: Hewitt  邮箱:qiaohewei@126.com  网站:www.hwcyxk.com 
- * @日期: 2018-10-17 17:23:35 
- * @最后修改: Hewitt  邮箱:qiaohewei@126.com  网站:www.hwcyxk.com 
- * @最后修改时间: 2018-10-17 17:23:35 
- */
 
-// 登录按钮切换
 
 function PwdLogin() {
     var login = document.getElementsByClassName("login_con");
