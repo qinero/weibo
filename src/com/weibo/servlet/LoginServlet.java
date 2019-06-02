@@ -25,12 +25,12 @@ public class LoginServlet extends HttpServlet {
         String pwd = request.getParameter("password");
 
         UserDao ud = new UserDao();
-        User user = new User();
-        user = ud.selectName(userName);
+
+        User user = ud.selectName(userName);
 
         if (user == null) {
             // 创建新用户
-
+            request.getRequestDispatcher("sign_in.jsp").forward(request, response);
         } else {
             if (pwd.equals(user.getUserPassword())) {
                 int id=user.getUserId();
