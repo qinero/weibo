@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="lib3">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/out/artifacts/weibo_war_exploded/WEB-INF/lib/jakarta-taglibs-standard-1.1.2/lib/jstl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/artifacts/weibo_war_exploded/WEB-INF/lib/jakarta-taglibs-standard-1.1.2/lib/standard.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
