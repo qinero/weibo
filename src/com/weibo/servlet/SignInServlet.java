@@ -21,42 +21,18 @@ public class SignInServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
-
+        // 获取提交的昵称，密码
         String userName = request.getParameter("name");
         String pwd = request.getParameter("pass");
+        System.out.println(userName);
+        UserAddDao uad = new UserAddDao();
+        boolean flag = uad.addName(userName,pwd);
 
-        UserDao ud = new UserDao();
-        User user = new User();
-        user = ud.selectName(userName);
-
-        if (user == null) {
-            // 创建新用户
-            UserAddDao addUser = new UserAddDao();
-            boolean add;
-            add = addUser.addName();
-            System.out.println("正确3");
-            if (add == true) {
-                System.out.println("正确4");
-                request.getRequestDispatcher("index.jsp").forward(request, response);
-
-            }
-        } else {
-
-        }
-    }
-     /*   System.out.println("正确2");
-        UserAddDao addUser = new UserAddDao();
-        User user = new User();
-        boolean add;
-
-        add=addUser.addName();
-        System.out.println("正确3");
-        if (add==true) {
+        if (flag) {
             System.out.println("正确4");
             request.getRequestDispatcher("index.jsp").forward(request, response);
-
         }
+    }
 
-      */
 }
 
