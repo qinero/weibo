@@ -17,23 +17,26 @@
 <body bgcolor="#ffa500">
 
 <div class="box">
+    <form action="SignInServlet" method="POST">
     <div id="tittle"><h2 align="center">注册</h2></div>
     <p class="input_box">
-        账户： <input id="name" type="text" placeholder="请输入您的昵称">
+        账户： <input name="name" id="name" type="text" placeholder="请输入您的昵称">
     </p>
     <p class="input_box">
-        密码： <input id="pass" type="password" placeholder="请设置您的密码">
+        密码： <input name="pass" id="pass" type="password" placeholder="请设置您的密码">
     </p>
     <p class="input_box">
-        验证： <input id="passl" type="password" placeholder="请再次输入密码">
+        验证： <input name="passl" id="passl" type="password" placeholder="请再次输入密码">
     </p>
 
     <div id="error_box"><br></div>
     <div class="button">
-        <button type="submit">立即注册</button>
+
+            <button type="submit">立即注册</button>
+
     </div>
     <h4 align="center"><a href="index.jsp">已有账号请登录</a></h4>
-
+    </form>
 </div>
 
 </body>
