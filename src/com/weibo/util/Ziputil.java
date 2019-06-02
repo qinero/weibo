@@ -25,8 +25,12 @@ public class Ziputil{
             zout.closeEntry();
             compressed = out.toByteArray();
         } catch (IOException e) {
+            e.printStackTrace();
             compressed = null;
-        } finally {
+        }catch (Exception e) {
+            e.printStackTrace();
+            compressed = null;
+        }finally {
             if (zout != null) {
                 try {
                     zout.close();
@@ -64,24 +68,31 @@ public class Ziputil{
             }
             decompressed = out.toString();
         } catch (IOException e) {
+            e.printStackTrace();
             decompressed = null;
-        } finally {
+        } catch (Exception e) {
+            e.printStackTrace();
+            decompressed = null;
+        }finally {
             if (zin != null) {
                 try {
                     zin.close();
                 } catch (IOException e) {
+                    e.printStackTrace();
                 }
             }
             if (in != null) {
                 try {
                     in.close();
                 } catch (IOException e) {
+                    e.printStackTrace();
                 }
             }
             if (out != null) {
                 try {
                     out.close();
                 } catch (IOException e) {
+                    e.printStackTrace();
                 }
             }
         }
