@@ -1,15 +1,12 @@
 package com.weibo.servlet;
 
-import com.weibo.dao.UserAddDao;
 import com.weibo.dao.UserDao;
-import com.weibo.pojo.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet(name = "SignInServlet", urlPatterns = {"/SignInServlet"})
@@ -25,11 +22,10 @@ public class SignInServlet extends HttpServlet {
         String userName = request.getParameter("name");
         String pwd = request.getParameter("pass");
         System.out.println(userName);
-        UserAddDao uad = new UserAddDao();
+        UserDao uad = new UserDao();
         boolean flag = uad.addName(userName,pwd);
 
         if (flag) {
-            System.out.println("正确4");
             request.getRequestDispatcher("index.jsp").forward(request, response);
         }
     }
