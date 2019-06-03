@@ -24,13 +24,15 @@ public class WriteServlet extends HttpServlet {
         response.setCharacterEncoding("utf-8");
 
         String content= request.getParameter("content");
+        // Session 传来用户名
         HttpSession session = request.getSession();
-        Object user=  session.getAttribute("user");
-
+        Object user=  session.getAttribute("username");
+        // 文字小于20字不压缩
         if(content.length()<21){
             Fileutil save=new Fileutil();
             save.saveString(content,user);
         }
+        // 大于20字压缩
         else{
             Ziputil zip=new Ziputil();
             Fileutil save=new Fileutil();
