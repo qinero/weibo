@@ -1,0 +1,45 @@
+package com.weibo.servlet;
+
+import com.weibo.dao.UserDao;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+@WebServlet(name = "HeadServlet", urlPatterns = {"/HeadServlet"})
+public class HeadServlet extends HttpServlet {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doGet(request, response);
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // 设置编码格式
+        request.setCharacterEncoding("utf-8");
+        response.setCharacterEncoding("utf-8");
+
+        File head= request.getFile("head");
+        // Session 传值
+        HttpSession session = request.getSession();
+        String username= (String)session.getAttribute("username");
+        // 操作数据库
+        UserDao ud = new UserDao();
+        // 添加简介
+        boolean result= ud.upHead(username,head);
+        // 是否添加成功
+        if (result == true) {
+            request.getRequestDispatcher("home.jsp").forward(request, response);
+        } else {
+            // 提示重新设置窗口
+            response.setContentType("text/html;charset=utf-8");
+            PrintWriter out=response.getWriter();
+            out.print("<script language='javascript'>('未提交成功，请重新提交')");
+            out.print("<script>window.location.href='head.jsp'</script>");
+        }
+    }
+}
