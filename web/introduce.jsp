@@ -16,12 +16,14 @@
     </style>
 </head>
 <body>
-<div>
-    <input type="text" name="introduce">
-</div>
-<br>
-<div>
-    <button type="submit">提交</button>
-</div>
+<form action="IntroduceServlet" method="POST">
+    <div>
+        <input type="text" name="introduce">
+    </div>
+    <br>
+    <div>
+        <button type="submit">提交</button>
+    </div>
+</form>
 </body>
 </html>
