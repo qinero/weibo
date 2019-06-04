@@ -52,10 +52,7 @@
                         <a class="nav-link" href="head.jsp">修改头像</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#/issues">修改昵称</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#/issues">修改简介</a>
+                        <a class="nav-link" href="introduce.jsp">修改简介</a>
                     </li>
                 </ul>
             </div>
@@ -69,10 +66,22 @@
             <div class="container">
                 <div class="content-center">
                     <div class="photo-container">
-                        <img src="assets/img/ryan.jpg" alt="">
+                        <img src="<%
+                        String head = request.getParameter("head");
+                        out.println(head);
+                    %>" alt="">
                     </div>
-                    <h3 class="title">昵称</h3>  <!-- 链接 -->
-                    <p class="category">简介</p>   <!-- 链接 -->
+                    <!-- 昵称 -->
+                    <h3 class="title"><%
+                        String name = request.getParameter("username");
+                        out.println(name);
+                    %>
+                    </h3>
+                    <!-- 简介 -->
+                    <p class="category"><%
+                        String intr = request.getParameter("introduce");
+                        out.println(intr);
+                    %></p>
                     <div class="content">
                         <div class="social-description">
                             <h2>26</h2>  <!-- 链接 -->
@@ -90,7 +99,6 @@
                 </div>
             </div>
         </div>
-        <div class="tlinks">Collect from <a href="http://www.cssmoban.com/" >网站建设</a></div>
         <div class="section">
             <div class="container">
                 <div class="button-container">
